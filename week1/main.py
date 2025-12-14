@@ -91,10 +91,10 @@ def random_policy(state, env):
     Random policy:
     Returns 0 (left) or 1 (right) with equal probability.
     """
-    
+    return random.choice([0,1])
 
 
-
+dir=1
 
 def monotonous_policy(state, env):
     """
@@ -103,7 +103,14 @@ def monotonous_policy(state, env):
     - When at a wall, reverse direction.
     Uses a global variable to track current direction.
     """
-    
+    global dir
+    if state==0:
+        dir=1
+    elif state==(env.N)-1:
+        dir=0
+    return dir
+
+center=None
 def wildcard_policy(state, env):
     """
     Your own policy.
@@ -114,6 +121,27 @@ def wildcard_policy(state, env):
     - If in the right half, move left.
     This does NOT use the hidden goal_state.
     """
+    ######################### simply given wildcard
+    # center=((env.N)-1)/2
+    # if state<center:
+    #     return 1
+    # elif state>center:
+    #     return 0
+    # else:
+    #     return random.choice([0,1])
+    
+    ####################### with modifications
+    global center
+    if center is None:
+        center=((env.N)-1)/2
+    if state<center:
+        center=(center-1)/2
+        return 1
+    elif state>center:
+        center+=(center-1)/2
+        return 0
+    else:
+        return random.choice([0,1])
     
 
 # ========================
