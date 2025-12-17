@@ -4,7 +4,7 @@
 This weeks theme is understanding the basic mathematic framework of describing staes , value functions ,policies.
 MDP's provide a formal framework to model our problem.
 Dynamic Programming is a general technique of solving sequntial problems optimally.In the context of this project we use Dynamic Programming to compute the optimal Policy and the "true" Value function for a given **complete information MDP**
-Note that there is still no "learning" involved as such in these step. Feedback based learning will be the theme for the next two sections
+Note that there is still no "learning" involved as such in these step. Feedback based learning will be the theme for the next  section after which we start with out main project!
 
 ## This weeks assignment
  ### 1. Understanding the mathematical formalisms :
